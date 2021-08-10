@@ -1,0 +1,193 @@
+.wrapper {
+    z-index: 1;
+    display: grid;
+    grid-template-rows: 85px auto;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
+
+.commands {
+    display: flex;
+}
+
+.articles {
+    display: grid;
+    grid-template-columns: repeat(6, 200px);
+    grid-auto-rows: 200px;
+    grid-gap: 20px;
+}
+
+.article-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-icon:hover {
+    border: 2px solid orange;
+}
+
+.dialog-article-wrapper {
+    z-index: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visible {
+    visibility: visible;
+    z-index: 3;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.dialog-article-edit {
+    position: relative;
+    background-color: white;
+    border: 2px solid lightgray;
+    width: 568px;
+    max-height: calc(100% - 100px);
+    height: auto;
+    display: none;
+    flex-direction: column;
+    box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
+}
+
+.dialog-article-edit .caption-wrapper {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.dialog-article-edit .caption-wrapper .caption {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-article-edit .caption-wrapper .caption span {
+    font-family: 'Arial';
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dialog-article-edit .cancel {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-article-edit .cancel svg {
+    width: 24px;
+    height: 24px;
+}
+
+.dialog-article-edit .content-wrapper {
+    overflow: auto;
+    height: 100%;
+}
+
+.dialog-article-edit .content-subwrapper {
+    display: grid;
+    padding: 24px;
+    grid-template-columns: 1fr;
+}
+
+.dialog-article-edit .content-subwrapper .caption {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.dialog-article-edit .content-subwrapper .caption span {
+    font-family: 'Arial';
+    font-size: 22px;
+    color: rgb(34, 34, 34);
+    font-weight: 600;
+}
+
+.dialog-article-edit .content-subwrapper .input {
+    margin-top: 8px;
+    height: 56px;
+    width: 100%;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.dialog-article-edit .content-subwrapper .input:focus-within {
+    border: 1px solid #0079C4;
+    outline-style: solid;
+    outline-width: thin;
+    outline-color: #0079C4;
+}
+
+.dialog-article-edit .content-wrapper .input span {
+    top: 18px;
+    font-family: 'Arial';
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+    text-indent: 10px;
+    color: rgb(113, 113, 113);
+}
+
+.dialog-article-edit .content-subwrapper input {
+    width: 100%;
+    height: 20px;
+    border: none;
+    text-indent: 10px;
+    font-family: 'Arial';
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.dialog-article-edit .content-subwrapper input:focus {
+    outline: none;
+}
+
+.dialog-article-edit .content-subwrapper .save {
+    margin-top: 8px;
+    height: 48px;
+    background: #0079C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dialog-article-edit .content-subwrapper .save span {
+    color: white;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+}
