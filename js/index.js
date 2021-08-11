@@ -76,7 +76,12 @@ function setupHandlers() {
     });
 }
 
+async function showArticles() {
+    articles = await getArticles();
+    displayArticles(articles);
+}
+
 $(document).ready(function() {
-    getArticles(articles);
     setupHandlers();
+    showArticles();
 })

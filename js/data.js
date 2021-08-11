@@ -1,20 +1,9 @@
-function getArticles(articles) { //read
-    $.ajax({
-        url: "get_articles.php",
-        type: 'GET',
-        dataType: 'json',
-        data: {
+async function getArticles() { //read
 
-        },
-        success: function(data) {
-            articles = data["articles"];
-            displayArticles(articles);
-        },
-        error: function(data) {
-            let responseText = data["responseText"];
-            alert(responseText);
-        },
-    });
+    let response = await fetch(`get_articles.php`);
+    let articles = await response.json();
+    
+    return articles; 
 }
 
 function updateArticle(id, title, desc) { //create and update

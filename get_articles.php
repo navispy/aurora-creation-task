@@ -19,4 +19,5 @@ function getArticles($connection)
 
 $articles = getArticles($connection);
 
-echo('{"articles":' . json_encode($articles, true) . '}');
+header('Content-Type: application/json');
+echo json_encode($articles);
